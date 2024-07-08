@@ -1,8 +1,10 @@
 const express = require("express");
 const connectToDb = require("./database/databaseConnection");
+const Blog = require("./model/blogModel");
 const app = express();
 
 connectToDb
+
 
 
 app.set('view engine',"ejs")
@@ -15,7 +17,7 @@ app.use(express.urlencoded({extended:true}))
 
 app.get("/",(req,res)=>{
     console.log(req);
-    res.send("<h1>this is about page</h1>");
+    res.send("<h1>this is home page</h1>");
 })
 
 app.get("/about",(req,res)=>{
@@ -34,10 +36,8 @@ app.get("/about",(req,res)=>{
     })
     
     app.post("/createblog",async (req,res) => {
-    // 
-    const{title,subtitle,description} = res.body
-    console.log(title,subtitle,description)
-       
+    const{title,subtitle,description} = req.body
+    console.log(title,subtitle,description)     
       
       await Blog.create ({
         title,
@@ -45,7 +45,7 @@ app.get("/about",(req,res)=>{
         description
       })
 
-      res.send("post hitted") 
+      res.send("Blog Created Successfully") 
     })
 
     
