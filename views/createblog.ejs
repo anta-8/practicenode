@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog Post Form</title>
+</head>
+<body>
+  <h2>Blog Post Form</h2>
+  <form action="/createblog" method="POST" enctype="multipart/form-data">
+    <label for="title">Title:</label><br>
+    <input type="text" id="title" name="title" required><br><br>
+
+    <label for="author">Subtitle</label><br>
+    <input type="text" id="author" name="author" required><br><br>
+
+    
+    <label for="sion">discription</label><br>
+    <textarea id="discription" name="discription"  required></textarea><br><br>
+
+   
+    <label for="featured-image">Featured Image:</label><br>
+    <input type="file" id="featured-image" name="featured-image" accept="image/*" required><br><br>
+
+   
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
